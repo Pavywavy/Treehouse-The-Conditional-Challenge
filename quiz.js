@@ -11,12 +11,6 @@ let fifthAnswer = "true";
 
 // 2. Store the rank of a player
 let score = 0;
-let bronzeRank = score === 1 || score === 2;
-let silverRank = score === 3 || score === 4;
-let goldRank = score === 5;
-// let finalRank = score === bronzeRank || score === silverRank || score === goldRank;
-let finalRank = if (score === bronzeRan) {
-}
 
 // 3. Select the <main> HTML element
 
@@ -75,8 +69,13 @@ const questionFive = prompt("true or false? Michael Jordan played basketball.");
    - 0 correct = No crown   
 */
 
+let bronzeRank = score === 1 || score === 2;
+let silverRank = score === 3 || score === 4;
+let goldRank = score === 5;
+let finalRank = score === bronzeRank || score === silverRank || score === goldRank;
+
 if (score === 5) {
- console.log("You got GOLD!"); 
+ console.log("You got GOLD!");
 } else if (score === 3 || score === 4) {
  console.log("You got SILVER!"); 
 } else if (score === 1 || score === 2) {
@@ -85,7 +84,7 @@ if (score === 5) {
  console.log("You got none of them correct!"); 
 }
 
-if (finalRank === bronzeRank) {
+if (finalRank === goldRank) {
     finalRank = "GOLD!"; 
 } else if (finalRank === silverRank){
     finalRank = "SILVER!";
