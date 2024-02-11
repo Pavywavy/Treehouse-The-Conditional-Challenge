@@ -10,10 +10,13 @@ let fourthAnswer = "false";
 let fifthAnswer = "true";
 
 // 2. Store the rank of a player
-let rank = 0;
-let correctAnswers = rank;
-
-
+let score = 0;
+let bronzeRank = score === 1 || score === 2;
+let silverRank = score === 3 || score === 4;
+let goldRank = score === 5;
+// let finalRank = score === bronzeRank || score === silverRank || score === goldRank;
+let finalRank = if (score === bronzeRan) {
+}
 
 // 3. Select the <main> HTML element
 
@@ -28,7 +31,7 @@ let correctAnswers = rank;
 const questionOne = prompt("true or false? The earth is round.");
   if (questionOne === firstAnswer) {
    console.log("Correct!");
-   rank++;
+   score++;
 } else {
   console.log("Wrong!");
 }
@@ -36,7 +39,7 @@ const questionOne = prompt("true or false? The earth is round.");
 const questionTwo = prompt("true or false? dogs are donut shaped.");
   if (questionTwo === secondAnswer) {
     console.log("Correct!");
-    rank++;
+    score++;
 } else {
   console.log("Wrong!");
 }
@@ -44,7 +47,7 @@ const questionTwo = prompt("true or false? dogs are donut shaped.");
 const questionThree = prompt("true or false? there's a skeleton inside you.");
   if (questionThree === thirdAnswer) {
     console.log("Correct!");
-    rank++;
+    score++;
 } else {
   console.log("Wrong!");
 }
@@ -52,13 +55,13 @@ const questionThree = prompt("true or false? there's a skeleton inside you.");
 const questionFour = prompt("true or false? the dinosaurs flew to another planet.");
   if (questionFour === fourthAnswer) {
   console.log("Correct!");
-    rank++;
+    score++;
   }
 
 const questionFive = prompt("true or false? Michael Jordan played basketball.");
   if (questionFive === fifthAnswer) {
    console.log("Correct!"); 
-    rank++;
+    score++;
   } else {
    console.log("Wrong!"); 
   }
@@ -72,24 +75,29 @@ const questionFive = prompt("true or false? Michael Jordan played basketball.");
    - 0 correct = No crown   
 */
 
-if (rank === 5) {
+if (score === 5) {
  console.log("You got GOLD!"); 
-} else if (rank === 3 || rank === 4) {
+} else if (score === 3 || score === 4) {
  console.log("You got SILVER!"); 
-} else if (rank === 1 || rank === 2) {
+} else if (score === 1 || score === 2) {
  console.log("You got BRONZE!"); 
 } else {
  console.log("You got none of them correct!"); 
 }
 
-
-if (correctAnswers === 5)
-  
-
+if (finalRank === bronzeRank) {
+    finalRank = "GOLD!"; 
+} else if (finalRank === silverRank){
+    finalRank = "SILVER!";
+} else if (finalRank === bronzeRank){
+    finalRank = "BRONZE!";
+} else {
+  finalRank = "FAILED TOTALLY!"; 
+}
 
 // 6. Output results to the <main> element
 
-document.querySelector("main").innerHTML = `<h1>You got ${correctAnswers} out of 5 correct!</h1>
-                                            Your rank is <h2>${rank}</h2>`;
+document.querySelector("main").innerHTML = `<h1>You got ${score} out of 5 correct!</h1>
+                                            Your rank is <h2>${finalRank}</h2>`;
 
 
