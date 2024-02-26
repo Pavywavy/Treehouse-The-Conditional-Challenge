@@ -75,24 +75,19 @@ let goldRank = score === 5;
 let finalRank = score === bronzeRank || score === silverRank || score === goldRank;
 
 if (score === 5) {
- console.log("You got GOLD!");
+  console.log("You got GOLD!");
+  finalRank = "GOLD!"; 
 } else if (score === 3 || score === 4) {
- console.log("You got SILVER!"); 
+  console.log("You got SILVER!"); 
+  finalRank = "SILVER!";
 } else if (score === 1 || score === 2) {
- console.log("You got BRONZE!"); 
+  console.log("You got BRONZE!"); 
+  finalRank = "BRONZE!";
 } else {
- console.log("You got none of them correct!"); 
-}
-
-if (finalRank === goldRank) {
-    finalRank = "GOLD!"; 
-} else if (finalRank === silverRank){
-    finalRank = "SILVER!";
-} else if (finalRank === bronzeRank){
-    finalRank = "BRONZE!";
-} else {
+  console.log("You got none of them correct!"); 
   finalRank = "FAILED TOTALLY!"; 
 }
+
 
 // 6. Output results to the <main> element
 
