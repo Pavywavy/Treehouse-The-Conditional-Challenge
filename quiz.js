@@ -2,15 +2,15 @@
   1. Store correct answers
    - When quiz begins, no answers are correct
 */
-
-let firstAnswer = "true";
-let secondAnswer = "false";
-let thirdAnswer = "true";
-let fourthAnswer = "false";
-let fifthAnswer = "true";
+const firstQuestion = "yes";
+const secondQuestion = "no";
+const thirdQuestion = "yes";
+const fourthQuestion = "no";
+const fifthQuestion = "yes";
 
 // 2. Store the rank of a player
-let score = 0;
+
+let playerScore = 0;
 
 // 3. Select the <main> HTML element
 
@@ -22,43 +22,34 @@ let score = 0;
    - Keep track of the number of correct answers
 */
 
-const questionOne = prompt("true or false? The earth is round.");
-  if (questionOne === firstAnswer) {
-   console.log("Correct!");
-   score++;
-} else {
-  console.log("Wrong!");
-}
-
-const questionTwo = prompt("true or false? dogs are donut shaped.");
-  if (questionTwo === secondAnswer) {
-    console.log("Correct!");
-    score++;
-} else {
-  console.log("Wrong!");
-}
-
-const questionThree = prompt("true or false? there's a skeleton inside you.");
-  if (questionThree === thirdAnswer) {
-    console.log("Correct!");
-    score++;
-} else {
-  console.log("Wrong!");
-}
-
-const questionFour = prompt("true or false? the dinosaurs flew to another planet.");
-  if (questionFour === fourthAnswer) {
-  console.log("Correct!");
-    score++;
+let firstAnswer = prompt("Is a dog a canine?");
+  if (firstAnswer === firstQuestion) {
+    playerScore++;
   }
 
-const questionFive = prompt("true or false? Michael Jordan played basketball.");
-  if (questionFive === fifthAnswer) {
-   console.log("Correct!"); 
-    score++;
-  } else {
-   console.log("Wrong!"); 
+let secondAnswer = prompt("Is the earth square shaped?");
+
+if (secondAnswer === secondQuestion) {
+    playerScore++;
+}  
+
+let thirdAnswer = prompt("Does yes start with the letter y?");
+  if (thirdAnswer === thirdQuestion) {
+    playerScore++;
+  }  
+
+let fourthAnswer = prompt("How do you spell no?");
+  if (fourthAnswer === fourthQuestion) {
+    playerScore++;
   }
+
+let fifthAnswer = prompt("How do you spell yes?");
+  if (fifthAnswer === fifthQuestion) {
+    playerScore++;
+  }
+
+
+
 
 
 /*
@@ -66,32 +57,29 @@ const questionFive = prompt("true or false? Michael Jordan played basketball.");
    - 5 correct = Gold
    - 3-4 correct = Silver
    - 1-2 correct = Bronze
-   - 0 correct = No crown   
+   - 0 correct = No crown
 */
 
-let bronzeRank = score === 1 || score === 2;
-let silverRank = score === 3 || score === 4;
-let goldRank = score === 5;
-let finalRank = score === bronzeRank || score === silverRank || score === goldRank;
+let crownRank = playerScore;
 
-if (score === 5) {
-  console.log("You got GOLD!");
-  finalRank = "GOLD!"; 
-} else if (score === 3 || score === 4) {
-  console.log("You got SILVER!"); 
-  finalRank = "SILVER!";
-} else if (score === 1 || score === 2) {
-  console.log("You got BRONZE!"); 
-  finalRank = "BRONZE!";
-} else {
-  console.log("You got none of them correct!"); 
-  finalRank = "FAILED TOTALLY!"; 
-}
-
+  if (playerScore === 5) {
+   console.log("Gold!");
+   crownRank = "Gold";
+   } else if ( playerScore === 3 || playerScore === 4 ) {
+     console.log("Silver!");
+     crownRank = "Silver";
+     } else if ( playerScore === 1 || playerScore === 2) {
+       console.log("Bronze!");
+       crownRank = "Bronze";
+       } else { (playerScore === 0)
+         console.log("0 Correct - No crown");
+         crownRank = "0 correct, Game over..";
+}    
+               
+               
 
 // 6. Output results to the <main> element
 
-document.querySelector("main").innerHTML = `<h1>You got ${score} out of 5 correct!</h1>
-                                            Your rank is <h2>${finalRank}</h2>`;
-
-
+document.querySelector("main").innerHTML =
+`<h1>You got ${playerScore} out of 5 !</h1>
+ <h2>Crown Earned: ${crownRank}</h2>`;
